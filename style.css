@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: #412b26;
+  transition: 0.5s ease-out;
+}
+.box {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #412b26; */
+  display: flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: 0.5s ease-out;
+}
+.box .info {
+  max-width: fit-content;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.box .info h1 {
+  position: static;
+  margin: 15px 65px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+}
+.box .images {
+  width: 430px;
+  margin: 30px auto;
+}
+.box .images img {
+  display: flex;
+  border-radius: 200px 200px 0 0;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+/* all */
+.accordions {
+  margin: 20px 50px;
+  max-width: fit-content;
+}
+.accordion {
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  padding: 30px 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 23px;
+  transition: 0.4s;
+}
+
+.accordion:hover {
+  /* background-color: #cccccc14; */
+}
+
+.accordion:after {
+  content: "\002B";
+  color: #ffd5af;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: transparent;
+  color: #b0a7a3;
+  max-height: 0;
+  width: auto;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+.panel p {
+  font-size: 17px;
+  font-weight: 600;
+  margin-left: 15px;
+}
+.panel p:last-child {
+  color: #d5dad8;
+}

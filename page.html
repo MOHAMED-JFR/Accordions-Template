@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="info">
+        <h1>Our values shape the work we do</h1>
+        <div class="accordions">
+          <button class="accordion active">Commitment to customers</button>
+          <div class="panel" style="max-height: 90px">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+
+          <button class="accordion">Attention to detail</button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+
+          <button class="accordion">Envirement</button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <button class="accordion">Trust & Transparency</button>
+          <div class="panel">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="images">
+        <img src="./images/Commitment_low.jpg" alt="Commitment_low" />
+      </div>
+    </div>
+    <script>
+      var acc = document.getElementsByClassName("accordion");
+      var body = document.querySelector("body");
+      var i;
+
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+          // this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          // console.log(panel.style.maxHeight);
+          if (panel.style.maxHeight) {
+            // this.classList.add("active");
+            // panel.style.maxHeight = null;
+          } else {
+            for (let j = 0; j < acc.length; j++) {
+              acc[j].nextElementSibling.style.maxHeight = null;
+              acc[j].classList.remove("active");
+            }
+
+            // console.log(this.textContent);
+            let test = this.textContent;
+            let imageToChange = document.querySelector(".box .images img");
+
+            this.classList.add("active");
+            if (test == "Commitment to customers") {
+              body.style.backgroundColor = "#412b26";
+              imageToChange.src = "./images/Commitment_low.jpg";
+            } else if (test == "Attention to detail") {
+              body.style.backgroundColor = "#454241";
+              imageToChange.src = "./images/Attention_low.jpg";
+            } else if (test == "Envirement") {
+              body.style.backgroundColor = "#697460";
+              imageToChange.src = "./images/Environment_low.jpg";
+            } else if (test == "Trust & Transparency") {
+              body.style.backgroundColor = "#a0aeae";
+              imageToChange.src = "./images/Trust_low.jpg";
+            }
+
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
